@@ -1,0 +1,41 @@
+.heading {
+  font-family: var(--family-heading, --family-base);
+  font-weight: var(--weight-bold);
+  margin: 0 0 8px 0;
+}
+
+.heading--x-large {
+  font-size: 2.5rem;
+  line-height: 1.33;
+}
+
+.heading--large {
+  font-size: 2rem;
+  line-height: 1.33;
+}
+
+.heading--medium {
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.heading--small {
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+.heading--x-small {
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.heading__link {
+  color: var(--black);
+  text-decoration: none;
+
+  &:focus,
+  &:hover {
+    color: var(--black-variant);
+    text-decoration: underline;
+  }
+}

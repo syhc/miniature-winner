@@ -1,0 +1,55 @@
+.datemarker {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  font-family: var(--family-base);
+  font-size: var(--font-base);
+}
+
+.datemarker--large {
+  height: 4.5em;
+  width: 4.5em;
+}
+
+.datemarker--small {
+  height: 3em;
+  width: 3em;
+}
+
+.datemarker__month {
+  align-items: center;
+  background-color: var(--black);
+  border: 1px solid  var(--black);
+  border-radius: 4px 4px 0 0;
+  display: flex;
+  justify-content: center;
+  color: var(--white);
+  height: 34%;
+  text-transform: uppercase;
+}
+
+.datemarker__month--large {
+  font-size: 1em;
+}
+
+.datemarker__month--small {
+  font-size: 0.7em;
+}
+
+.datemarker__day {
+  align-items: center;
+  border: 1px solid var(--silver);
+  border-radius: 0 0 4px 4px;
+  border-top: 0;
+  display: flex;
+  justify-content: center;
+  height: 66%;
+}
+
+.datemarker__day--large {
+  font-size: 1.75em;
+}
+
+.datemarker__day--small {
+  font-size: 1em;
+}
