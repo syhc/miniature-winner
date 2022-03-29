@@ -1,3 +1,8 @@
+.card {
+  font-size: var(--font-base);
+  width: 100%;
+}
+
 .card--left,
 .card--right {
   display: grid;
@@ -18,6 +23,13 @@
   min-height: 100%
 }
 
+a .card__image {
+  &:hover,
+  &:focus {
+    opacity: 0.9;
+  }
+}
+
 .card__body {
   background-color: var(--white);
   border: 1px solid var(--silver);
@@ -27,7 +39,7 @@
 .card__body--right {
   align-items: center;
   display: flex;
-  padding: 24px;
+  padding: 24px 48px;
 }
 
 .card__body--left {
@@ -48,9 +60,18 @@
   padding-bottom: 24px;
 }
 
+.card__label {
+  font-family: var(--family-base);
+  font-size: 0.75rem;
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  margin: 0 0 8px 0;
+}
+
 .card__text {
   font-family: var(--family-base);
-  line-height: 1.3;
-  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+  margin: 8px 0 0 0;
 }
 

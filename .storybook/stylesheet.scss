@@ -4,6 +4,8 @@
   --silver: #c0c0c0;
   --light-grey: #d3d3d3;
   --white: #fff;
+  --link: #2186B8;
+  --link-variant: #0F7AAF;
 }
 
 :root {
@@ -12,4 +14,22 @@
   --font-base: 16px;
   --weight-normal: 400;
   --weight-bold: 700;
+}
+
+.link {
+  color: var(--link);
+
+  &:focus,
+  &:hover {
+    color: var(--link-variant, --link);
+  }
+}
+
+.link--inverse {
+  text-decoration: none;
+
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+  }
 }

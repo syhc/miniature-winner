@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Heading } from '../../typography/heading/Heading';
 import './card.scss';
 
-export const Card = ({ title, url, description, image, imagePosition, maxWidth, ...props }) => {
+export const Card = ({ title, url, description, image, imagePosition, label, labelUrl, maxWidth, ...props }) => {
   const card = [];
 
   let cardImage = (
@@ -23,6 +23,7 @@ export const Card = ({ title, url, description, image, imagePosition, maxWidth, 
       <a
         aria-hidden='true'
         href={url}
+        style={{zIndex: 1}}
       >
         {cardImage}
       </a>
@@ -30,6 +31,20 @@ export const Card = ({ title, url, description, image, imagePosition, maxWidth, 
   }
 
   let cardBody = [];
+  if (label && labelUrl) {
+    cardBody.push(
+      <div
+      className='card__label'
+      >
+        <a
+          className='link link--inverse'
+          href={labelUrl}
+        >
+          {label}
+        </a>
+      </div>
+    );  
+  }
   cardBody.push(
     <Heading
       heading={title}
@@ -55,7 +70,7 @@ export const Card = ({ title, url, description, image, imagePosition, maxWidth, 
   if ('left' === imagePosition || 'right' === imagePosition) {
     cardBody = (
       <div>
-        {cardText}
+        {cardBody}
       </div>
     );
   }
@@ -87,6 +102,8 @@ Card.propTypes = {
   description: PropTypes.string,
   image: PropTypes.string,
   imagePosition: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
+  label: PropTypes.string,
+  labelUrl: PropTypes.string,
   maxWidth: PropTypes.string,
 };
 
