@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Heading } from '../typography/heading/Heading';
+import { Heading } from '../content/heading/Heading';
 
 export default {
-  title: 'Typography/Heading',
+  title: 'Content/Heading',
   component: Heading,
   argTypes: {},
 };

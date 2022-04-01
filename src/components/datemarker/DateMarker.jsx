@@ -9,14 +9,14 @@ export const DateMarker = ({ color, size, month, day, ...props }) => {
         {...props}
       >
         <div
-          aria-hidden='true'
+          aria-hidden
           className={['datemarker__month', `datemarker__month--${size}`].join(' ')}
           style={{backgroundColor: color, borderColor: color}} 
         >
           {month}
         </div>
         <div
-          aria-hidden='true'
+          aria-hidden
           className={['datemarker__day', `datemarker__day--${size}`].join(' ')}
         >
           {day}

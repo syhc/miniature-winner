@@ -9,7 +9,7 @@ export const Card = ({ title, url, description, image, imagePosition, label, lab
 
   let cardImage = (
     <div
-      aria-hidden='true'
+      aria-hidden
       className='card__image-container'
     >
       <img
@@ -21,7 +21,7 @@ export const Card = ({ title, url, description, image, imagePosition, label, lab
   if (url) {
     cardImage = (
       <a
-        aria-hidden='true'
+        aria-hidden
         href={url}
         style={{zIndex: 1}}
       >
