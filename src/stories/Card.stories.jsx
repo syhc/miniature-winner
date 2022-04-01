@@ -22,5 +22,20 @@ Horizontal.args = {
   imagePosition: 'left',
   label: 'Dogs',
   labelUrl: '#',
+  size: 'large',
+  border: true,
   maxWidth: '1000px',
+};
+
+export const Vertical = Template.bind({});
+Vertical.args = {
+  title: 'Lorem ipsum dolor sit amet',
+  url: '#',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.',
+  image: 'https://picsum.photos/id/433/400/300',
+  imagePosition: 'top',
+  label: 'Bears',
+  labelUrl: '#',
+  border: true,
+  maxWidth: '400px',
 };

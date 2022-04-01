@@ -32,7 +32,16 @@ a .card__image {
 
 .card__body {
   background-color: var(--white);
+}
+
+.card__body--border {
   border: 1px solid var(--silver);
+  padding: 24px;
+}
+
+.card__body--borderless {
+  border: 0;
+  padding: 0;
 }
 
 .card__body--left,
@@ -72,6 +81,6 @@ a .card__image {
   font-family: var(--family-base);
   font-size: 1rem;
   line-height: 1.4;
-  margin: 8px 0 0 0;
+  margin: 16px 0 0 0;
 }
 

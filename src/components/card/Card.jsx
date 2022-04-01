@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Heading } from '../../typography/heading/Heading';
+import { Heading } from '../../content/heading/Heading';
 import './card.scss';
 
-export const Card = ({ title, url, description, image, imagePosition, label, labelUrl, maxWidth, ...props }) => {
+export const Card = ({ title, url, description, image, imagePosition, label, labelUrl, border, ...props }) => {
   const card = [];
+  const size = props.size ?? 'medium';
+  const level = props.level ?? 2;
+  const maxWidth = props.maxWidth ?? null;
 
   let cardImage = (
     <div
@@ -49,8 +52,8 @@ export const Card = ({ title, url, description, image, imagePosition, label, lab
     <Heading
       heading={title}
       url={url}
-      level="1"
-      size="large"
+      level={level}
+      size={size}
     />
   );
   if (description) {
@@ -74,9 +77,10 @@ export const Card = ({ title, url, description, image, imagePosition, label, lab
       </div>
     );
   }
+  const bodyBorder = border ? 'card__body--border' : 'card_body--borderless';
   card.push(
     <div
-      className={['card__body', `card__body--${imagePosition}`].join(' ')}
+      className={['card__body', bodyBorder, `card__body--${imagePosition}`].join(' ')}
     >
       {cardBody}
     </div>
@@ -104,10 +108,10 @@ Card.propTypes = {
   imagePosition: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
   label: PropTypes.string,
   labelUrl: PropTypes.string,
-  maxWidth: PropTypes.string,
+  border: PropTypes.bool,
 };
 
 Card.defaultProps = {
   imagePosition: 'left',
-  maxWidth: null,
+  border: true,
 };
