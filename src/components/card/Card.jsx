@@ -11,25 +11,30 @@ export const Card = ({ title, url, description, image, imagePosition, label, lab
   const maxWidth = props.maxWidth ?? null;
 
   let cardImage = (
-    <div
-      aria-hidden
-      className='card__image-container'
-    >
-      <img
-        src={image} 
-        className='card__image'
-      />
-    </div>
+    <img
+      src={image} 
+      className='card__image'
+    />
   );
   if (url) {
     cardImage = (
       <a
         aria-hidden
+        className='card__image-container'
         href={url}
         style={{zIndex: 1}}
       >
         {cardImage}
       </a>
+    );
+  } else {
+    cardImage = (
+      <div
+        aria-hidden
+        className='card__image-container'
+      >
+        {cardImage}
+        </div>
     );
   }
 
@@ -93,7 +98,6 @@ export const Card = ({ title, url, description, image, imagePosition, label, lab
     <div
       className={['card', `card--${imagePosition}`].join(' ')}
       style={{maxWidth}}
-      {...props}
     >
       {card}
     </div>
