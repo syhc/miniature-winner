@@ -11,7 +11,7 @@ export const Heading = ({ heading, url, level, size, ...props }) => {
         className='heading__link'
         href={url}
       >
-        {heading}
+        {text}
       </a>
     );
   }
