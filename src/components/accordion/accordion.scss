@@ -1,0 +1,22 @@
+.accordion__heading {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 40px auto;
+  margin: 0;
+  padding: 8px 0;
+  text-align: left;
+  width: 100%;
+}
+
+.accordion__icon {
+  margin: 4px 0;
+}
+
+.accordion__body {
+  font-family: var(--family-base);
+  font-size: 1rem;
+  line-height: 1.4;
+  margin: 8px 16px 16px 40px;
+}
