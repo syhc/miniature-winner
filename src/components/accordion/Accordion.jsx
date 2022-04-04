@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -10,12 +10,19 @@ const AccordionItem = ({ title, content, ...props }) => {
   const [headingId] = useState(`id-${uuidv4()}`);
   const [bodyId] = useState(`id-${uuidv4()}`);
   const [isExpanded, setIsExpanded] = useState(false);
+  const bodyRef = useRef(null);
 
   const icon = isExpanded ? 'angle-down' : 'angle-right';
   const display = isExpanded ? 'block' : 'none';
 
   const size = props.size ?? 'medium';
   const level = props.level ?? 2;
+
+  useEffect(() => {
+    if (isExpanded) {
+      bodyRef.current.focus();
+    }
+  });
 
   return (
     <div
@@ -48,6 +55,7 @@ const AccordionItem = ({ title, content, ...props }) => {
         aria-labelledby={headingId}
         className='accordion__body'
         id={bodyId}
+        ref={bodyRef}
         role='region'
         style={{ display: display }}
         tabIndex='-1'
